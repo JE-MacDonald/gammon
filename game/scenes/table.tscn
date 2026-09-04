@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://csgej2ek5j45i"]
+
+[ext_resource type="Texture2D" uid="uid://cc7pm72igklrh" path="res://assets/sprites/table.png" id="1_02ppr"]
+[ext_resource type="Script" uid="uid://cm3jj6ll576gc" path="res://scripts/table.gd" id="1_eotx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bogoe"]
+size = Vector2(413, 211)
+
+[node name="table" type="StaticBody2D" unique_id=1238512354]
+collision_mask = 512
+script = ExtResource("1_eotx8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1860003642]
+texture = ExtResource("1_02ppr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=498891830]
+position = Vector2(-134.5, 67.5)
+shape = SubResource("RectangleShape2D_bogoe")

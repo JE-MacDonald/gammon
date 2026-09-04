@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://h2uhvoalbuo2"]
+
+[ext_resource type="Texture2D" uid="uid://clqo2nin8uucq" path="res://assets/backgrounds/win screen.png" id="1_l2arl"]
+
+[node name="win_screen" type="Node2D" unique_id=582590018]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=341417323]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2051122153]
+texture = ExtResource("1_l2arl")

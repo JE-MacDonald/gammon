@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bes7mhgy0baob"]
+
+[ext_resource type="Script" uid="uid://dxjhknn0n2lm0" path="res://scripts/doorway_shadow.gd" id="1_b0no8"]
+[ext_resource type="Texture2D" uid="uid://u7vtdos6ir0m" path="res://assets/sprites/doorway shadow.png" id="1_qq4lh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bogoe"]
+radius = 69.00725
+
+[node name="doorway_shadow" type="Area2D" unique_id=1847699743]
+collision_mask = 512
+script = ExtResource("1_b0no8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=501916089]
+position = Vector2(-78, -450)
+texture = ExtResource("1_qq4lh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1023580506]
+shape = SubResource("CircleShape2D_bogoe")

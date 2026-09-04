@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://q4jbb7mdwbvl"]
+
+[ext_resource type="Script" uid="uid://ih3jn6qvir7w" path="res://scripts/gamestate.gd" id="1_ncx5y"]
+
+[node name="gamestate" type="Node" unique_id=1350177072]
+script = ExtResource("1_ncx5y")

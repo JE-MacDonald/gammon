@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c0vbedvrewcwo"]
+
+[ext_resource type="Script" uid="uid://r41x7b3qlb7n" path="res://scripts/room_manager.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bsa28upridakx" path="res://scenes/player.tscn" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://cl6isfjhctcil" path="res://scripts/ui.gd" id="3_lnu2h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
+bg_color = Color(0.7284692, 0, 0.1412234, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lnu2h"]
+
+[node name="game" type="Node2D" unique_id=894587797]
+
+[node name="roomManager" type="Node" parent="." unique_id=167318266]
+script = ExtResource("1_yqjtg")
+starting_room_path = "res://scenes/room_1.tscn"
+
+[node name="player" parent="." unique_id=1865820857 instance=ExtResource("2_lnu2h")]
+position = Vector2(3000, 0)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1286747559]
+layer = 20
+script = ExtResource("3_lnu2h")
+
+[node name="textbox" type="Panel" parent="UI" unique_id=1851104800]
+offset_left = 721.0
+offset_top = -445.0
+offset_right = 797.0
+offset_bottom = -405.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
+
+[node name="message" type="Label" parent="UI/textbox" unique_id=1742430767]
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 40.0
+label_settings = SubResource("LabelSettings_lnu2h")
+autowrap_mode = 2

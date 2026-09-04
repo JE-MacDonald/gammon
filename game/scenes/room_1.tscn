@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://32pwlsh55un2"]
+
+[ext_resource type="Texture2D" uid="uid://cixxltd475q32" path="res://assets/backgrounds/room1.png" id="1_0tsjr"]
+[ext_resource type="PackedScene" uid="uid://df4v1vbgj7mo2" path="res://scenes/doorway.tscn" id="2_8oql1"]
+[ext_resource type="PackedScene" uid="uid://bxkjt86xxf465" path="res://scenes/doorway_locked.tscn" id="3_xhekj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_epxd5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vu5en"]
+a = Vector2(-600, 77)
+b = Vector2(599, 78)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_epxd5"]
+a = Vector2(-5, -138)
+b = Vector2(-200, 405)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bogoe"]
+a = Vector2(-109, -104)
+b = Vector2(82, 441)
+
+[node name="room_1" type="Node2D" unique_id=1259533659]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=815161822]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1090179034]
+texture = ExtResource("1_0tsjr")
+
+[node name="walls" type="StaticBody2D" parent="." unique_id=1671714389]
+
+[node name="south" type="CollisionShape2D" parent="walls" unique_id=1283386642]
+position = Vector2(-1, 436)
+shape = SubResource("WorldBoundaryShape2D_epxd5")
+
+[node name="north" type="CollisionShape2D" parent="walls" unique_id=398361538]
+position = Vector2(-2, -160)
+shape = SubResource("SegmentShape2D_vu5en")
+
+[node name="west" type="CollisionShape2D" parent="walls" unique_id=289725358]
+position = Vector2(-596, 45)
+shape = SubResource("SegmentShape2D_epxd5")
+
+[node name="east" type="CollisionShape2D" parent="walls" unique_id=975393531]
+position = Vector2(707, 15)
+shape = SubResource("SegmentShape2D_bogoe")
+
+[node name="exits" type="Node" parent="." unique_id=388116949]
+
+[node name="doorway" parent="exits" unique_id=67579441 instance=ExtResource("2_8oql1")]
+position = Vector2(-331, -183)
+destination_room = "res://scenes/room_2.tscn"
+destination_spawn = "south"
+
+[node name="doorway_locked" parent="exits" unique_id=396521936 instance=ExtResource("3_xhekj")]
+position = Vector2(384, -183)
+destination_room = "res://scenes/win_screen.tscn"
+
+[node name="spawns" type="Node" parent="." unique_id=1645847750]
+
+[node name="north" type="Marker2D" parent="spawns" unique_id=1837404014]
+position = Vector2(-394, 32)
+
+[node name="default" type="Marker2D" parent="spawns" unique_id=1053649101]
+position = Vector2(0, 278)
