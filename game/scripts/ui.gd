@@ -7,6 +7,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	add_to_group("UI")
+	textbox.hide()
 
 func show_message(text: String):
 	message.text = text
